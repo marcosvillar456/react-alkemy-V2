@@ -1,18 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Nav from "./components/nav/nav";
-import Products from "./components/pages/Home";
 import { render } from "react-dom";
 import "./index.css";
+
+import Home from "./components/pages/Home";
 import More from "./components/pages/more";
+import Team from "./components/pages/Team";
 
 const App = () => {
   return (
     <div>
       <Nav />
       <div className="container">
-        <Route exact={true} path="/" component={Products} />
-        <Route exact path="/:id" component={More} />
+        <Route exact path="/team" component={Team} />
+        <Route exact={true} path="/" component={Home} />
+        <Route exact path="/More/:id" component={More} />
       </div>
     </div>
   );

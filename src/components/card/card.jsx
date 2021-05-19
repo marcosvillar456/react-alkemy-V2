@@ -2,16 +2,18 @@ import React from "react";
 import "./card.css";
 import { ObtenerDatosStorage } from "../../services/services";
 import { Link } from "react-router-dom";
-
-let team = [];
 ObtenerDatosStorage();
-
 function handleClick(id) {
+  let team = JSON.parse(localStorage.getItem("team"));
   team.push(id);
   localStorage.setItem("team", JSON.stringify(team));
+  const dataArr = new Set(team);
+  let result = [...dataArr];
+  localStorage.removeItem("team");
+  localStorage.setItem("team", JSON.stringify(result));
 }
 
-const Product = ({ Heroe }) => {
+const Card = ({ Heroe }) => {
   return (
     <div className="card">
       <div className="card_image">
@@ -28,19 +30,18 @@ const Product = ({ Heroe }) => {
           <br></br>
           power:<span>{Heroe.powerstats.power}</span> <br></br>
         </p>
-
-        <button
-          size="small"
-          color="primary"
-          onClick={() => handleClick(Heroe.id)}
-        >
-          Add
-        </button>
-        <Link to={`/${Heroe.id}`}>
-          <button variant="outline-dark mb-2">more</button>
-        </Link>
+        <div className="add">
+          <button className="add" onClick={() => handleClick(Heroe.id)}>
+            <p>Add</p>
+          </button>
+          <Link to={`/More/${Heroe.id}`}>
+            <button className="add">
+              <p>more</p>
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
-export default Product;
+export default Card;

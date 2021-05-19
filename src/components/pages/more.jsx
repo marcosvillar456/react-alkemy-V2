@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getAllHeroes } from "../../services/services";
 import { useParams } from "react-router-dom";
-import CardMore from "../card_More/card_More";
 
 const More = () => {
-  const { id } = useParams();
   const [Heroes, setHeroes] = useState([]);
   const [Loading, setLoading] = useState(false);
+  const { id } = useParams();
 
   useEffect(() => {
     async function datos() {
@@ -22,11 +21,12 @@ const More = () => {
   if (Loading === false) {
     return <h2>Loading...</h2>;
   }
+
   return (
     <div>
       {
         <li key={Heroes.id} className="cards_item">
-          <CardMore Heroe={Heroes} />
+          <h2>{Heroes.name}</h2>
         </li>
       }
     </div>

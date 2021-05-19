@@ -40,7 +40,18 @@ img {
   padding: 0;
   justify-content: center;
 }
-
+.buttons {
+  text-align-last: center;
+}
+.add {
+  border-radius: 2px;
+  padding: 4px;
+  text-align: center;
+}
+.add p {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .cards_item {
   display: flex;
   padding: 1rem;

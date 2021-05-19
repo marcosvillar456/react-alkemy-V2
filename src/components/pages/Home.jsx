@@ -1,11 +1,11 @@
-import Product from "../card/product";
+import Card from "../card/card";
 import React, { useEffect, useState } from "react";
 import { getAllHeroes } from "../../services/services";
 
 //se declara la URL base
 const baseUrl = "https://akabab.github.io/superhero-api/api/all.json";
 
-const Products = () => {
+const Home = () => {
   const [Heroes, setHeroes] = useState([]);
   const [Loading, setLoading] = useState(false);
 
@@ -34,7 +34,7 @@ const Products = () => {
     <div className="cards">
       {Heroes.slice(0, visible).map((Heroe) => (
         <li key={Heroe.id} className="cards_item">
-          <Product Heroe={Heroe} />
+          <Card Heroe={Heroe} />
         </li>
       ))}
 
@@ -42,4 +42,4 @@ const Products = () => {
     </div>
   );
 };
-export default Products;
+export default Home;

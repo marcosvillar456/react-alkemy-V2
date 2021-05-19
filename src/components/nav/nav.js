@@ -172,8 +172,11 @@ class Nav extends Component {
             onClick={(e) => this.handleToggle(e)}
           />
           <ul className={`collapsed ${isExpanded ? "is-expanded" : ""}`}>
-            <NavLink activeClassName="active" to="/">
+            <NavLink exact to="/">
               <li>home</li>
+            </NavLink>
+            <NavLink exact to="/team">
+              <li>Team</li>
             </NavLink>
           </ul>
         </nav>
