@@ -14,7 +14,7 @@ const App = () => {
       <Nav />
       <div className="container">
         <Route exact path="/team" component={Team} />
-        <Route exact={true} path="/" component={Home} />
+        <Route path="/" component={Home} />
       </div>
       <Route exact path="/More/:id" component={More} />
     </div>

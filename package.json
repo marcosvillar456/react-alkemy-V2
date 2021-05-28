@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build -r https://marcosvillar456.github.io/react-alkemy-V2"
+    "deploy": "gh-pages -d public"
   },
   "eslintConfig": {
     "extends": [
