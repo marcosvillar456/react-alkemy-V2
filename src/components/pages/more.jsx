@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllHeroes } from "../../services/services";
 import { useParams } from "react-router-dom";
+import CardMore from "../card_More/card_More";
 
 const More = () => {
   const [Heroes, setHeroes] = useState([]);
@@ -23,12 +24,10 @@ const More = () => {
   }
 
   return (
-    <div>
-      {
-        <li key={Heroes.id} className="cards_item">
-          <h2>{Heroes.name}</h2>
-        </li>
-      }
+    <div className="cards">
+      <li key={Heroes.id} className="cards_item">
+        {<CardMore Heroe={Heroes} datos={true} />}
+      </li>
     </div>
   );
 };

@@ -15,8 +15,8 @@ const App = () => {
       <div className="container">
         <Route exact path="/team" component={Team} />
         <Route exact={true} path="/" component={Home} />
-        <Route exact path="/More/:id" component={More} />
       </div>
+      <Route exact path="/More/:id" component={More} />
     </div>
   );
 };

@@ -34,7 +34,7 @@ const Team = () => {
     <div className="cards">
       {Heroes.map((Heroe) => (
         <li key={Heroe.id} className="cards_item">
-          <Card Heroe={Heroe} />
+          <Card Heroe={Heroe} datos={true} />
           <button onClick={() => Delete(Heroe.id)}>Delete</button>
         </li>
       ))}

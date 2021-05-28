@@ -34,7 +34,7 @@ const Home = () => {
     <div className="cards">
       {Heroes.slice(0, visible).map((Heroe) => (
         <li key={Heroe.id} className="cards_item">
-          <Card Heroe={Heroe} />
+          <Card Heroe={Heroe} datos={false} />
         </li>
       ))}
 
